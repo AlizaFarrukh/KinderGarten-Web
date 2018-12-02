@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
@@ -10,24 +11,24 @@ using WebApplication3;
 
 namespace WebApplication3.Controllers
 {
-    public class Table_1Controller : Controller
+    public class Table_11Controller : Controller
     {
         private LoginEntities db = new LoginEntities();
 
-        // GET: Table_1
-        public ActionResult Index()
+        // GET: Table_11
+        public async Task<ActionResult> Index()
         {
-            return View(db.Table_1.ToList());
+            return View(await db.Table_1.ToListAsync());
         }
 
-        // GET: Table_1/Details/5
-        public ActionResult Details(string id)
+        // GET: Table_11/Details/5
+        public async Task<ActionResult> Details(string id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Table_1 table_1 = db.Table_1.Find(id);
+            Table_1 table_1 = await db.Table_1.FindAsync(id);
             if (table_1 == null)
             {
                 return HttpNotFound();
@@ -35,37 +36,37 @@ namespace WebApplication3.Controllers
             return View(table_1);
         }
 
-        // GET: Table_1/Create
+        // GET: Table_11/Create
         public ActionResult SignUp()
         {
             return View();
         }
 
-        // POST: Table_1/Create
+        // POST: Table_11/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult SignUp([Bind(Include = "UserID,Email,Password,ConfirmPassword")] Table_1 table_1)
+        public async Task<ActionResult> SignUp([Bind(Include = "UserID,Email,Password,ConfirmPassword")] Table_1 table_1)
         {
             if (ModelState.IsValid)
             {
                 db.Table_1.Add(table_1);
-                db.SaveChanges();
+                await db.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
 
             return View(table_1);
         }
 
-        // GET: Table_1/Edit/5
-        public ActionResult Edit(string id)
+        // GET: Table_11/Edit/5
+        public async Task<ActionResult> Edit(string id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Table_1 table_1 = db.Table_1.Find(id);
+            Table_1 table_1 = await db.Table_1.FindAsync(id);
             if (table_1 == null)
             {
                 return HttpNotFound();
@@ -73,30 +74,30 @@ namespace WebApplication3.Controllers
             return View(table_1);
         }
 
-        // POST: Table_1/Edit/5
+        // POST: Table_11/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "UserID,Email,Password,ConfirmPassword")] Table_1 table_1)
+        public async Task<ActionResult> Edit([Bind(Include = "UserID,Email,Password,ConfirmPassword")] Table_1 table_1)
         {
             if (ModelState.IsValid)
             {
                 db.Entry(table_1).State = EntityState.Modified;
-                db.SaveChanges();
+                await db.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
             return View(table_1);
         }
 
-        // GET: Table_1/Delete/5
-        public ActionResult Delete(string id)
+        // GET: Table_11/Delete/5
+        public async Task<ActionResult> Delete(string id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Table_1 table_1 = db.Table_1.Find(id);
+            Table_1 table_1 = await db.Table_1.FindAsync(id);
             if (table_1 == null)
             {
                 return HttpNotFound();
@@ -104,14 +105,14 @@ namespace WebApplication3.Controllers
             return View(table_1);
         }
 
-        // POST: Table_1/Delete/5
+        // POST: Table_11/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(string id)
+        public async Task<ActionResult> DeleteConfirmed(string id)
         {
-            Table_1 table_1 = db.Table_1.Find(id);
+            Table_1 table_1 = await db.Table_1.FindAsync(id);
             db.Table_1.Remove(table_1);
-            db.SaveChanges();
+            await db.SaveChangesAsync();
             return RedirectToAction("Index");
         }
 
