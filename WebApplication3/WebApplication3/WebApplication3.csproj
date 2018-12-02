@@ -199,14 +199,13 @@
     <Content Include="css\1animate.css" />
     <Content Include="css\1font-awesome.css" />
     <Content Include="css\1font-awesome.min.css" />
-    <Content Include="css\1main.css" />
     <Content Include="css\1util.css" />
     <Content Include="css\2animate.min.css" />
     <Content Include="css\2bootstrap.css" />
     <Content Include="css\2bootstrap.min.css" />
     <Content Include="css\2demo.css" />
     <Content Include="css\2font-awesome.min.css" />
-    <Content Include="css\2paper-dashboard.css" />
+    <Content Include="css\2paperdashboard.css" />
     <Content Include="css\2responsive.css" />
     <Content Include="css\2style.css" />
     <Content Include="css\2themify-icons.css" />
@@ -216,6 +215,8 @@
     <Content Include="css\bootstrap.css" />
     <Content Include="css\daterangepicker.css" />
     <Content Include="css\font-awesome.min.css" />
+    <Content Include="css\1main.css" />
+    <Content Include="css\fonts\2paperdashboard.css" />
     <Content Include="css\fonts\Linearicons-Free.svg" />
     <Content Include="css\hamburgers.css" />
     <Content Include="css\hamburgers.min.css" />
@@ -312,6 +313,7 @@
     <Content Include="css\style.css.map" />
     <Content Include="css\_DS_Store" />
     <Content Include="Controllers\SignUp.cshtml" />
+    <Content Include="Controllers\Create.cshtml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />

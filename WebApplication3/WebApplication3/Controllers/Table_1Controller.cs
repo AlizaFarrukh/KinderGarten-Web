@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
@@ -15,19 +16,19 @@ namespace WebApplication3.Controllers
         private LoginEntities db = new LoginEntities();
 
         // GET: Table_1
-        public ActionResult Index()
+        public async Task<ActionResult> Index()
         {
-            return View(db.Table_1.ToList());
+            return View(await db.Table_1.ToListAsync());
         }
 
         // GET: Table_1/Details/5
-        public ActionResult Details(string id)
+        public async Task<ActionResult> Details(string id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Table_1 table_1 = db.Table_1.Find(id);
+            Table_1 table_1 = await db.Table_1.FindAsync(id);
             if (table_1 == null)
             {
                 return HttpNotFound();
@@ -46,12 +47,12 @@ namespace WebApplication3.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult SignUp([Bind(Include = "UserID,Email,Password,ConfirmPassword")] Table_1 table_1)
+        public async Task<ActionResult> SignUp([Bind(Include = "UserID,Email,Password,ConfirmPassword")] Table_1 table_1)
         {
             if (ModelState.IsValid)
             {
                 db.Table_1.Add(table_1);
-                db.SaveChanges();
+                await db.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
 
@@ -59,13 +60,13 @@ namespace WebApplication3.Controllers
         }
 
         // GET: Table_1/Edit/5
-        public ActionResult Edit(string id)
+        public async Task<ActionResult> Edit(string id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Table_1 table_1 = db.Table_1.Find(id);
+            Table_1 table_1 = await db.Table_1.FindAsync(id);
             if (table_1 == null)
             {
                 return HttpNotFound();
@@ -78,25 +79,25 @@ namespace WebApplication3.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "UserID,Email,Password,ConfirmPassword")] Table_1 table_1)
+        public async Task<ActionResult> Edit([Bind(Include = "UserID,Email,Password,ConfirmPassword")] Table_1 table_1)
         {
             if (ModelState.IsValid)
             {
                 db.Entry(table_1).State = EntityState.Modified;
-                db.SaveChanges();
+                await db.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
             return View(table_1);
         }
 
         // GET: Table_1/Delete/5
-        public ActionResult Delete(string id)
+        public async Task<ActionResult> Delete(string id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Table_1 table_1 = db.Table_1.Find(id);
+            Table_1 table_1 = await db.Table_1.FindAsync(id);
             if (table_1 == null)
             {
                 return HttpNotFound();
@@ -107,11 +108,11 @@ namespace WebApplication3.Controllers
         // POST: Table_1/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(string id)
+        public async Task<ActionResult> DeleteConfirmed(string id)
         {
-            Table_1 table_1 = db.Table_1.Find(id);
+            Table_1 table_1 = await db.Table_1.FindAsync(id);
             db.Table_1.Remove(table_1);
-            db.SaveChanges();
+            await db.SaveChangesAsync();
             return RedirectToAction("Index");
         }
 
