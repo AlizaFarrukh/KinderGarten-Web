@@ -6,9 +6,6 @@
     <edmx:Diagrams>
       <Diagram DiagramId="6a54673b12224e0fa1a4baa9e1dabbd1" Name="Diagram1">
         <EntityTypeShape EntityType="LoginModel.sysdiagram" Width="1.5" PointX="0.75" PointY="0.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="LoginModel.Table_1" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="LoginModel.Table2" Width="1.5" PointX="5.125" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="LoginModel.Table3" Width="1.5" PointX="7" PointY="0.75" IsExpanded="true" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
