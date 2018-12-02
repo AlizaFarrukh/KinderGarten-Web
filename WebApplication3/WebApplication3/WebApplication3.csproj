@@ -311,6 +311,7 @@
     <Content Include="css\SLbootstrap.min.css.map" />
     <Content Include="css\style.css.map" />
     <Content Include="css\_DS_Store" />
+    <Content Include="Controllers\SignUp.cshtml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
