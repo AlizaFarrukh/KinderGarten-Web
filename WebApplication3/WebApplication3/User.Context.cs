@@ -29,6 +29,8 @@ namespace WebApplication3
     
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<Table_1> Table_1 { get; set; }
+        public virtual DbSet<Table2> Table2 { get; set; }
+        public virtual DbSet<Table3> Table3 { get; set; }
     
         public virtual int sp_alterdiagram(string diagramname, Nullable<int> owner_id, Nullable<int> version, byte[] definition)
         {
