@@ -155,8 +155,15 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Assignment.aspx.cs">
+      <DependentUpon>Assignment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Assignment.aspx.designer.cs">
+      <DependentUpon>Assignment.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\Table_11Controller.cs" />
+    <Compile Include="Controllers\Table_1Controller.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -212,6 +219,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Announcement.html" />
+    <Content Include="Assignment.aspx" />
     <Content Include="Assignments.html" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
@@ -351,7 +359,7 @@
       <DependentUpon>Model1.edmx</DependentUpon>
     </Content>
     <Content Include="Controllers\Create.cshtml" />
-    <Content Include="Controllers\SignUp.cshtml" />
+    <Content Include="Views\Table_1\SignUp.cshtml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -403,11 +411,12 @@
     <Content Include="User.edmx.diagram">
       <DependentUpon>User.edmx</DependentUpon>
     </Content>
-    <Content Include="Views\Table_11\Create.cshtml" />
-    <Content Include="Views\Table_11\Delete.cshtml" />
-    <Content Include="Views\Table_11\Details.cshtml" />
-    <Content Include="Views\Table_11\Edit.cshtml" />
-    <Content Include="Views\Table_11\Index.cshtml" />
+    <Content Include="Views\Table_1\Create.cshtml" />
+    <Content Include="Views\Table_1\Delete.cshtml" />
+    <Content Include="Views\Table_1\Details.cshtml" />
+    <Content Include="Views\Table_1\Edit.cshtml" />
+    <Content Include="Views\Table_1\Index.cshtml" />
+    <Content Include="SignUp.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
