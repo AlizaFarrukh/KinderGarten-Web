@@ -11,7 +11,7 @@ using WebApplication3;
 
 namespace WebApplication3.Controllers
 {
-    public class Table_11Controller : Controller
+    public class Table_1Controller : Controller
     {
         private LoginEntities db = new LoginEntities();
 
