@@ -13,10 +13,10 @@ namespace WebApplication3
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class dbEntities : DbContext
+    public partial class LoginEntities4 : DbContext
     {
-        public dbEntities()
-            : base("name=dbEntities")
+        public LoginEntities4()
+            : base("name=LoginEntities4")
         {
         }
     
@@ -25,6 +25,7 @@ namespace WebApplication3
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
+        public virtual DbSet<Assignment> Assignments { get; set; }
+        public virtual DbSet<Table> Tables { get; set; }
     }
 }
