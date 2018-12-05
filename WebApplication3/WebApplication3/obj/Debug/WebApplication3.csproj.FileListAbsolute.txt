@@ -285,8 +285,8 @@ C:\Users\Asus\Documents\GitHub\KinderGarten-Web\WebApplication3\WebApplication3\
 C:\Users\Asus\Documents\GitHub\KinderGarten-Web\WebApplication3\WebApplication3\bin\Microsoft.AI.WindowsServer.xml
 C:\Users\Asus\Documents\GitHub\KinderGarten-Web\WebApplication3\WebApplication3\bin\Microsoft.AI.Web.xml
 C:\Users\Asus\Documents\GitHub\KinderGarten-Web\WebApplication3\WebApplication3\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\Asus\Documents\GitHub\KinderGarten-Web\WebApplication3\WebApplication3\obj\Debug\WebApplication3.csprojAssemblyReference.cache
 C:\Users\Asus\Documents\GitHub\KinderGarten-Web\WebApplication3\WebApplication3\obj\Debug\WebApplication3.csproj.CoreCompileInputs.cache
 C:\Users\Asus\Documents\GitHub\KinderGarten-Web\WebApplication3\WebApplication3\obj\Debug\WebApplication3.csproj.CopyComplete
 C:\Users\Asus\Documents\GitHub\KinderGarten-Web\WebApplication3\WebApplication3\obj\Debug\WebApplication3.dll
 C:\Users\Asus\Documents\GitHub\KinderGarten-Web\WebApplication3\WebApplication3\obj\Debug\WebApplication3.pdb
+C:\Users\Asus\Documents\GitHub\KinderGarten-Web\WebApplication3\WebApplication3\obj\Debug\WebApplication3.csprojAssemblyReference.cache
