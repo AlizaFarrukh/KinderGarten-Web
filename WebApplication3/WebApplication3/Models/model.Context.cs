@@ -12,12 +12,11 @@ namespace WebApplication3.Models
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
-    using System.Threading.Tasks;
-
-    public partial class LoginEntities8 : DbContext
+    
+    public partial class LoginEntities10 : DbContext
     {
-        public LoginEntities8()
-            : base("name=LoginEntities8")
+        public LoginEntities10()
+            : base("name=LoginEntities10")
         {
         }
     
@@ -26,11 +25,6 @@ namespace WebApplication3.Models
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Table_1> Table_1 { get; set; }
-
-        internal Task SaveChangesAsync(Table_1 table_1)
-        {
-            throw new NotImplementedException();
-        }
+        public virtual DbSet<Table1> Table1 { get; set; }
     }
 }

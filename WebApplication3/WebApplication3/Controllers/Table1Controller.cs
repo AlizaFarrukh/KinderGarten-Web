@@ -8,110 +8,109 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using WebApplication3.Models;
-
 namespace WebApplication3.Controllers
 {
-    public class Table_1Controller : Controller
+    public class Table1Controller : Controller
     {
-        private LoginEntities8 db = new LoginEntities8();
+        private LoginEntities10 db = new LoginEntities10();
 
-        // GET: Table_1
+        // GET: Table1
         public async Task<ActionResult> Index()
         {
-            return View(await db.Table_1.ToListAsync());
+            return View(await db.Table1.ToListAsync());
         }
 
-        // GET: Table_1/Details/5
+        // GET: Table1/Details/5
         public async Task<ActionResult> Details(string id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Table_1 table_1 = await db.Table_1.FindAsync(id);
-            if (table_1 == null)
+            Table1 table1 = await db.Table1.FindAsync(id);
+            if (table1 == null)
             {
                 return HttpNotFound();
             }
-            return View(table_1);
+            return View(table1);
         }
 
-        // GET: Table_1/Create
-        public ActionResult Create()
+        // GET: Table1/Create
+        public ActionResult SignUp()
         {
             return View();
         }
 
-        // POST: Table_1/Create
+        // POST: Table1/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Create([Bind(Include = "UserID,EmailID,Pasword,IsEmailVerified,ActivationCode")] Table_1 table_1)
+        public async Task<ActionResult> SignUp([Bind(Include = "UserID,Email,Password,ConfirmPassword,IsEmailVerified,ActivationCode")] Table1 table1)
         {
             if (ModelState.IsValid)
             {
-                db.Table_1.Add(table_1);
+                db.Table1.Add(table1);
                 await db.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
 
-            return View(table_1);
+            return View(table1);
         }
 
-        // GET: Table_1/Edit/5
+        // GET: Table1/Edit/5
         public async Task<ActionResult> Edit(string id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Table_1 table_1 = await db.Table_1.FindAsync(id);
-            if (table_1 == null)
+            Table1 table1 = await db.Table1.FindAsync(id);
+            if (table1 == null)
             {
                 return HttpNotFound();
             }
-            return View(table_1);
+            return View(table1);
         }
 
-        // POST: Table_1/Edit/5
+        // POST: Table1/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Edit([Bind(Include = "UserID,EmailID,Pasword,IsEmailVerified,ActivationCode")] Table_1 table_1)
+        public async Task<ActionResult> Edit([Bind(Include = "UserID,Email,Password,ConfirmPassword,IsEmailVerified,ActivationCode")] Table1 table1)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(table_1).State = EntityState.Modified;
+                db.Entry(table1).State = EntityState.Modified;
                 await db.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
-            return View(table_1);
+            return View(table1);
         }
 
-        // GET: Table_1/Delete/5
+        // GET: Table1/Delete/5
         public async Task<ActionResult> Delete(string id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Table_1 table_1 = await db.Table_1.FindAsync(id);
-            if (table_1 == null)
+            Table1 table1 = await db.Table1.FindAsync(id);
+            if (table1 == null)
             {
                 return HttpNotFound();
             }
-            return View(table_1);
+            return View(table1);
         }
 
-        // POST: Table_1/Delete/5
+        // POST: Table1/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> DeleteConfirmed(string id)
         {
-            Table_1 table_1 = await db.Table_1.FindAsync(id);
-            db.Table_1.Remove(table_1);
+            Table1 table1 = await db.Table1.FindAsync(id);
+            db.Table1.Remove(table1);
             await db.SaveChangesAsync();
             return RedirectToAction("Index");
         }

@@ -5,49 +5,52 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
       <Schema Namespace="LoginModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <EntityType Name="Table_1">
+        <EntityType Name="Table1">
           <Key>
             <PropertyRef Name="UserID" />
           </Key>
-          <Property Name="UserID" Type="nvarchar" MaxLength="250" Nullable="false" />
-          <Property Name="EmailID" Type="nvarchar" MaxLength="254" Nullable="false" />
-          <Property Name="Pasword" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="UserID" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Password" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="ConfirmPassword" Type="nvarchar(max)" Nullable="false" />
           <Property Name="IsEmailVerified" Type="bit" Nullable="false" />
           <Property Name="ActivationCode" Type="uniqueidentifier" Nullable="false" />
         </EntityType>
         <EntityContainer Name="LoginModelStoreContainer">
-          <EntitySet Name="Table_1" EntityType="Self.Table_1" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Table1" EntityType="Self.Table1" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
       </Schema>
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="LoginModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityType Name="Table_1">
+        <EntityType Name="Table1">
           <Key>
             <PropertyRef Name="UserID" />
           </Key>
-          <Property Name="UserID" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="EmailID" Type="String" MaxLength="254" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Pasword" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="UserID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ConfirmPassword" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="IsEmailVerified" Type="Boolean" Nullable="false" />
           <Property Name="ActivationCode" Type="Guid" Nullable="false" />
         </EntityType>
-        <EntityContainer Name="LoginEntities8" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Table_1" EntityType="Self.Table_1" />
+        <EntityContainer Name="LoginEntities10" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Table1" EntityType="Self.Table1" />
         </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="LoginModelStoreContainer" CdmEntityContainer="LoginEntities8">
-          <EntitySetMapping Name="Table_1">
-            <EntityTypeMapping TypeName="LoginModel.Table_1">
-              <MappingFragment StoreEntitySet="Table_1">
+        <EntityContainerMapping StorageEntityContainer="LoginModelStoreContainer" CdmEntityContainer="LoginEntities10">
+          <EntitySetMapping Name="Table1">
+            <EntityTypeMapping TypeName="LoginModel.Table1">
+              <MappingFragment StoreEntitySet="Table1">
                 <ScalarProperty Name="UserID" ColumnName="UserID" />
-                <ScalarProperty Name="EmailID" ColumnName="EmailID" />
-                <ScalarProperty Name="Pasword" ColumnName="Pasword" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="ConfirmPassword" ColumnName="ConfirmPassword" />
                 <ScalarProperty Name="IsEmailVerified" ColumnName="IsEmailVerified" />
                 <ScalarProperty Name="ActivationCode" ColumnName="ActivationCode" />
               </MappingFragment>

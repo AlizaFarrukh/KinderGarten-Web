@@ -1,43 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="LoginModel1.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-  <!--Errors Found During Generation:
-warning 6002: The table/view 'Login.dbo.Assignments' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-  <EntityType Name="Assignments">
-    <Key>
-      <PropertyRef Name="Assignments" />
-    </Key>
-    <Property Name="Assignments" Type="nchar" MaxLength="10" Nullable="false" />
-  </EntityType>
-  <!--Errors Found During Generation:
-warning 6002: The table/view 'Login.dbo.Table' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-  <EntityType Name="Table">
+<Schema Namespace="LoginModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Table1">
     <Key>
       <PropertyRef Name="UserID" />
-      <PropertyRef Name="Email" />
-      <PropertyRef Name="Password" />
-      <PropertyRef Name="IsEmailVerified" />
-      <PropertyRef Name="ActivationCode" />
     </Key>
-    <Property Name="UserID" Type="nchar" MaxLength="250" Nullable="false" />
-    <Property Name="Email" Type="varchar" MaxLength="254" Nullable="false" />
+    <Property Name="UserID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="Password" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ConfirmPassword" Type="nvarchar(max)" Nullable="false" />
     <Property Name="IsEmailVerified" Type="bit" Nullable="false" />
     <Property Name="ActivationCode" Type="uniqueidentifier" Nullable="false" />
   </EntityType>
-  <EntityContainer Name="LoginModel1StoreContainer">
-    <EntitySet Name="Assignments" EntityType="Self.Assignments" store:Type="Tables" store:Schema="dbo">
-      <DefiningQuery>SELECT 
-    [Assignments].[Assignments] AS [Assignments]
-    FROM [dbo].[Assignments] AS [Assignments]</DefiningQuery>
-    </EntitySet>
-    <EntitySet Name="Table" EntityType="Self.Table" store:Type="Tables" store:Schema="dbo">
-      <DefiningQuery>SELECT 
-    [Table].[UserID] AS [UserID], 
-    [Table].[Email] AS [Email], 
-    [Table].[Password] AS [Password], 
-    [Table].[IsEmailVerified] AS [IsEmailVerified], 
-    [Table].[ActivationCode] AS [ActivationCode]
-    FROM [dbo].[Table] AS [Table]</DefiningQuery>
-    </EntitySet>
+  <EntityContainer Name="LoginModelStoreContainer">
+    <EntitySet Name="Table1" EntityType="Self.Table1" Schema="dbo" store:Type="Tables" />
   </EntityContainer>
 </Schema>

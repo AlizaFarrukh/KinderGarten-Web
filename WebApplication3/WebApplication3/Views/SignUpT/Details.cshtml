@@ -1,4 +1,4 @@
-﻿@model WebApplication3.Models.Table_1
+﻿@model WebApplication3.Models.Table1
 
 @{
     ViewBag.Title = "Details";
@@ -7,23 +7,31 @@
 <h2>Details</h2>
 
 <div>
-    <h4>Table_1</h4>
+    <h4>Table1</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.EmailID)
+            @Html.DisplayNameFor(model => model.Email)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.EmailID)
+            @Html.DisplayFor(model => model.Email)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Pasword)
+            @Html.DisplayNameFor(model => model.Password)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Pasword)
+            @Html.DisplayFor(model => model.Password)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ConfirmPassword)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ConfirmPassword)
         </dd>
 
         <dt>

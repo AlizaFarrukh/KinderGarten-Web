@@ -1,19 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="LoginModel1StoreContainer" CdmEntityContainer="LoginEntities4">
-    <EntitySetMapping Name="Assignments">
-      <EntityTypeMapping TypeName="LoginModel1.Assignment">
-        <MappingFragment StoreEntitySet="Assignments">
-          <ScalarProperty Name="Assignments" ColumnName="Assignments" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Tables">
-      <EntityTypeMapping TypeName="LoginModel1.Table">
-        <MappingFragment StoreEntitySet="Table">
+  <EntityContainerMapping StorageEntityContainer="LoginModelStoreContainer" CdmEntityContainer="LoginEntities9">
+    <EntitySetMapping Name="Table1">
+      <EntityTypeMapping TypeName="LoginModel.Table1">
+        <MappingFragment StoreEntitySet="Table1">
           <ScalarProperty Name="UserID" ColumnName="UserID" />
           <ScalarProperty Name="Email" ColumnName="Email" />
           <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="ConfirmPassword" ColumnName="ConfirmPassword" />
           <ScalarProperty Name="IsEmailVerified" ColumnName="IsEmailVerified" />
           <ScalarProperty Name="ActivationCode" ColumnName="ActivationCode" />
         </MappingFragment>
