@@ -156,39 +156,54 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\SignUpTController.cs" />
-    <Compile Include="Controllers\Table11Controller.cs" />
-    <Compile Include="Controllers\Table1Controller.cs" />
+    <Compile Include="Controllers\SignUpTablesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\model.Context.cs">
+    <Compile Include="kgmodel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>kgmodel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="kgmodel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>kgmodel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="kgmodel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>kgmodel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="model.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>model.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\model.cs">
+    <Compile Include="model.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>model.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\model.Designer.cs">
+    <Compile Include="model.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>model.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Models\Table1.cs">
+    <Compile Include="Models\User.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SignUpTable.cs">
+      <DependentUpon>kgmodel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Table1.cs">
       <DependentUpon>model.tt</DependentUpon>
     </Compile>
-    <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Announcement.html" />
     <Content Include="App_Data\mydatabase.mdf" />
     <Content Include="App_Data\mydatabase_log.ldf">
       <DependentUpon>mydatabase.mdf</DependentUpon>
     </Content>
-    <Content Include="Assignments.html" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -235,9 +250,6 @@
     <Content Include="css\SLbootstrap.min.css" />
     <Content Include="css\style.css" />
     <Content Include="css\sytle1.css" />
-    <Content Include="dashboardAdmin.html" />
-    <Content Include="dashboardStudent.html" />
-    <Content Include="dashboardTeacher.html" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -247,7 +259,6 @@
     <Content Include="images\h-blog-1.jpg" />
     <Content Include="images\h-blog-2.jpg" />
     <Content Include="images\kids.jpg" />
-    <Content Include="index.html" />
     <Content Include="js\1main.js" />
     <Content Include="js\1map-custom.js" />
     <Content Include="js\2bootstrap-checkbox-radio.js" />
@@ -288,20 +299,26 @@
     <Content Include="js\stellar.js" />
     <Content Include="js\theme.js" />
     <Content Include="js\wow.min.js" />
-    <Content Include="MessagesS.html" />
-    <Content Include="MessagesT.html" />
-    <Content Include="Models\model.Context.tt">
+    <Content Include="kgmodel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>kgmodel.edmx</DependentUpon>
+      <LastGenOutput>kgmodel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="kgmodel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>kgmodel.edmx</DependentUpon>
+      <LastGenOutput>kgmodel.cs</LastGenOutput>
+    </Content>
+    <Content Include="model.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>model.edmx</DependentUpon>
       <LastGenOutput>model.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\model.tt">
+    <Content Include="model.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>model.edmx</DependentUpon>
       <LastGenOutput>model.cs</LastGenOutput>
     </Content>
-    <Content Include="notificationsS.html" />
-    <Content Include="notificationsT.html" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
@@ -319,14 +336,20 @@
     <Content Include="css\SLbootstrap.min.css.map" />
     <Content Include="css\style.css.map" />
     <Content Include="css\_DS_Store" />
-    <EntityDeploy Include="Models\model.edmx">
+    <EntityDeploy Include="model.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>model.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Models\model.edmx.diagram">
+    <Content Include="model.edmx.diagram">
       <DependentUpon>model.edmx</DependentUpon>
     </Content>
-    <None Include="Controllers\Create.cshtml" />
+    <EntityDeploy Include="kgmodel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>kgmodel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="kgmodel.edmx.diagram">
+      <DependentUpon>kgmodel.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -338,14 +361,22 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
-    <Content Include="SignIn.html" />
-    <Content Include="tableA.html" />
-    <Content Include="tableAdelete.html" />
-    <Content Include="tableAview.html" />
-    <Content Include="tableT.html" />
-    <Content Include="TeacherSignUp.html" />
-    <Content Include="userS.html" />
-    <Content Include="userT.html" />
+    <Content Include="Views\Announcement.html" />
+    <Content Include="Views\Assignments.html" />
+    <Content Include="Views\index.html" />
+    <Content Include="Views\MessagesS.html" />
+    <Content Include="Views\MessagesT.html" />
+    <Content Include="Views\notificationsS.html" />
+    <Content Include="Views\notificationsT.html" />
+    <Content Include="Views\SignUpTables\Sections.html" />
+    <Content Include="Views\SignIn.html" />
+    <Content Include="Views\tableA.html" />
+    <Content Include="Views\tableAdelete.html" />
+    <Content Include="Views\tableAview.html" />
+    <Content Include="Views\tableT.html" />
+    <Content Include="Views\TeacherSignUp.html" />
+    <Content Include="Views\userS.html" />
+    <Content Include="Views\userT.html" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -362,24 +393,13 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Table1\Create.cshtml" />
-    <Content Include="Views\Table1\Delete.cshtml" />
-    <Content Include="Views\Table1\Details.cshtml" />
-    <Content Include="Views\Table1\Edit.cshtml" />
-    <Content Include="Views\Table1\Index.cshtml" />
-    <Content Include="Views\Table1\SignUp.cshtml" />
-    <Content Include="Views\Table11\SignIn.cshtml" />
-    <Content Include="Views\Table11\Create.cshtml" />
-    <Content Include="Views\Table11\Delete.cshtml" />
-    <Content Include="Views\Table11\Details.cshtml" />
-    <Content Include="Views\Table11\Edit.cshtml" />
-    <Content Include="Views\Table11\Index.cshtml" />
-    <Content Include="Views\SignUpT\Create.cshtml" />
-    <Content Include="Views\SignUpT\Delete.cshtml" />
-    <Content Include="Views\SignUpT\Details.cshtml" />
-    <Content Include="Views\SignUpT\Edit.cshtml" />
-    <Content Include="Views\SignUpT\Index.cshtml" />
-    <Content Include="Views\SignUpT\TeacherSignUp.cshtml" />
+    <Content Include="Views\SignUp.cshtml" />
+    <Content Include="Views\SignUpTables\Create.cshtml" />
+    <Content Include="Views\SignUpTables\Delete.cshtml" />
+    <Content Include="Views\SignUpTables\Details.cshtml" />
+    <Content Include="Views\SignUpTables\Edit.cshtml" />
+    <Content Include="Views\SignUpTables\Index.cshtml" />
+    <Content Include="Views\SignUpTables\SignUp.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

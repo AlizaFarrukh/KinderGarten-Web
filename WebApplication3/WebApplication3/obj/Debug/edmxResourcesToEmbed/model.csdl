@@ -11,7 +11,7 @@
     <Property Name="IsEmailVerified" Type="Boolean" Nullable="false" />
     <Property Name="ActivationCode" Type="Guid" Nullable="false" />
   </EntityType>
-  <EntityContainer Name="LoginEntities9" annotation:LazyLoadingEnabled="true">
+  <EntityContainer Name="LoginEntities11" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Table1" EntityType="Self.Table1" />
   </EntityContainer>
 </Schema>
